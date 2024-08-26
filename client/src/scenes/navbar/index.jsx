@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     
-    <FlexBetween padding="1rem 6%" backgroundColor={alt} position='sticky'> 
+    <FlexBetween padding="1rem 6%" backgroundColor={alt} position='sticky' top={0} zIndex={99}> 
       {/*  padding="1rem 6%" (String) applicable to only for Box Properties, For others use sx={{}} properties */}
       <FlexBetween gap="1.75rem">
         <Typography
