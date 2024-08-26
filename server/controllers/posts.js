@@ -14,7 +14,7 @@ export const createPost = async (req, res) => {
       description,
       userPicturePath: user.picturePath,
       picturePath,
-      likes: {},  //Liked by users(StringRef), so we have used obj
+      likes: {},  //Liked by users(StringRef), so we have used obj {someId:true}
       comments: [],
     });
     await newPost.save();

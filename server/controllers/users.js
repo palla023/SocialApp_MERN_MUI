@@ -37,7 +37,7 @@ export const addRemoveFriend = async (req, res) => {
     const user = await User.findById(id);
     const friend = await User.findById(friendId);
     
-    if (user === friend) {
+    if (id === friendId) {
       // User cannot friend themselves
       console.log("Error: You cannot friend yourself.");
       // Additional code for error handling or appropriate action

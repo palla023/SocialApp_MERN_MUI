@@ -21,6 +21,8 @@ export const authSlice = createSlice({
     setLogout: (state) => {
       state.user = null;
       state.token = null;
+      state.mode = "light";
+      state.posts = [];
     },
     setFriends: (state, action) => {
       if (state.user) {        //we are checking if user is there or not in state by setlogin()
@@ -36,7 +38,7 @@ export const authSlice = createSlice({
       const updatedPosts = state.posts.map((post) => {
         if (post._id === action.payload.post._id) return action.payload.post;
         return post;
-      }); 
+      });
       state.posts = updatedPosts;
     },
   },
