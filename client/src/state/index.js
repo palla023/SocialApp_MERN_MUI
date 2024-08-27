@@ -32,8 +32,12 @@ export const authSlice = createSlice({
       }
     },
     setPosts: (state, action) => {
-      state.posts = action.payload.posts;
-    },
+      // Sorting posts by createdAt date in descending order (newest first)
+      const sortedPosts = action.payload.posts.sort((p1, p2) => new Date(p2.createdAt) - new Date(p1.createdAt));
+      
+      // Setting the sorted posts to the state
+      state.posts = sortedPosts;
+  },
     setPost: (state, action) => {
       const updatedPosts = state.posts.map((post) => {
         if (post._id === action.payload.post._id) return action.payload.post;
