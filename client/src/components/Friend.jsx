@@ -43,7 +43,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);
-            navigate(0);
+            // navigate(0);   //In React Router, calling navigate(0) will reload the page completely, similar to pressing the browser's refresh button.
           }}
         >
           <Typography
