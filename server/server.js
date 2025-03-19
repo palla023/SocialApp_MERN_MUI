@@ -25,11 +25,15 @@ const __dirname = path.dirname(__filename);
 //The above Two are used only , when we use type=Module
 dotenv.config();
 const app = express();
+app.use(cors({
+  origin: "http://localhost:3000", 
+  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"], 
+  allowedHeaders: ["Content-Type", "Authorization"], 
+}));
 app.use(express.json());
 app.use(helmet()); // apply security headers to enhance the security of your application
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common")); // to log HTTP request details in the Common Log Format.
-app.use(cors({ origin: "*" }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
